@@ -542,7 +542,6 @@ section {
 
 .device {
     width: 280px;
-    height: 580px;
     background-color: var(--dark-color);
     border-radius: 30px;
     box-shadow: var(--shadow-dark);
@@ -550,6 +549,11 @@ section {
     position: relative;
     transition: var(--transition);
     overflow: hidden;
+    z-index: 10;
+    /* Use aspect ratio to maintain proportions */
+    aspect-ratio: 0.48;
+    /* Set max dimensions */
+    max-width: 80vw;
 }
 
 .dark-theme .device {
@@ -2480,3 +2484,4 @@ section {
 .phone-color-options {
     justify-content: center;
 }
+
