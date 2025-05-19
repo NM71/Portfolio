@@ -858,6 +858,27 @@ section {
     background-color: #ff5722;
 }
 
+.phone-color-option[data-theme="teal"] {
+    background-color: #008080;
+}
+
+.phone-color-option[data-theme="coral"] {
+    background-color: #ff6b6b;
+}
+
+.phone-color-option[data-theme="indigo"] {
+    background-color: #5c6bc0;
+}
+
+.phone-color-option[data-theme="mint"] {
+    background-color: #4ecdc4;
+}
+
+.phone-color-option[data-theme="slate"] {
+    background-color: #546e7a;
+}
+
+
 .app-nav {
     display: flex;
     justify-content: space-around;

@@ -563,6 +563,7 @@ const colorOptions = document.querySelectorAll('.color-option');
 const root = document.documentElement;
 
 // Define color themes
+// Define color themes
 const colorThemes = {
     blue: {
         primary: '#2196f3',
@@ -598,8 +599,45 @@ const colorThemes = {
         primaryLight: '#ffccbc',
         secondary: '#ff9800',
         accent: '#2196f3'
+    },
+    // New modern color themes
+    teal: {
+        primary: '#008080',
+        primaryDark: '#005f5f',
+        primaryLight: '#b3e0e0',
+        secondary: '#00b3b3',
+        accent: '#ff6b6b'
+    },
+    coral: {
+        primary: '#ff6b6b',
+        primaryDark: '#cc5555',
+        primaryLight: '#ffd5d5',
+        secondary: '#ff8e8e',
+        accent: '#4ecdc4'
+    },
+    indigo: {
+        primary: '#5c6bc0',
+        primaryDark: '#3949ab',
+        primaryLight: '#d1d9ff',
+        secondary: '#7986cb',
+        accent: '#ffd54f'
+    },
+    mint: {
+        primary: '#4ecdc4',
+        primaryDark: '#33b3ac',
+        primaryLight: '#c5f0ee',
+        secondary: '#80deea',
+        accent: '#ff6b6b'
+    },
+    slate: {
+        primary: '#546e7a',
+        primaryDark: '#37474f',
+        primaryLight: '#cfd8dc',
+        secondary: '#78909c',
+        accent: '#ffb74d'
     }
 };
+
 
 // Check for saved color theme
 const savedTheme = localStorage.getItem('colorTheme');
