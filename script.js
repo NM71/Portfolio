@@ -805,3 +805,31 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(deviceElement, { attributes: true, childList: true, subtree: true });
     }
 });
+
+
+// Ensure consistent phone UI dimensions
+function ensurePhoneDimensions() {
+    const device = document.querySelector('.device');
+    if (device) {
+        // Get the computed width (actual rendered width)
+        const computedWidth = window.getComputedStyle(device).width;
+        const width = parseFloat(computedWidth);
+        
+        // Calculate height based on aspect ratio (width/height = 0.48)
+        const height = width / 0.48;
+        
+        // Apply the calculated height
+        device.style.height = `${height}px`;
+        
+        // Log dimensions for debugging
+        console.log(`Phone dimensions: ${width}px × ${height}px`);
+    }
+}
+
+// Run on load, resize, and after a short delay
+window.addEventListener('load', () => {
+    ensurePhoneDimensions();
+    // Run again after a short delay to account for any layout shifts
+    setTimeout(ensurePhoneDimensions, 500);
+});
+window.addEventListener('resize', ensurePhoneDimensions);

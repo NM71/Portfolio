@@ -534,6 +534,10 @@ section {
 .flutter-animation {
     position: relative;
     z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .device {
@@ -559,6 +563,8 @@ section {
     border-radius: 20px;
     overflow: hidden;
     transition: var(--transition);
+    box-sizing: border-box;
+
 }
 
 .dark-theme .screen {
@@ -2384,11 +2390,13 @@ section {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     position: absolute;
     animation: blob-animation 8s infinite;
+    z-index: 1;
 }
 
 .device {
     width: 280px;
-    height: 580px;
+    height: auto; /* Let height adjust based on aspect ratio */
+    aspect-ratio: 0.48; /* Maintain phone aspect ratio (width/height) */
     max-width: 80vw; /* Limit width on small screens */
     max-height: 80vh; /* Limit height on small screens */
     aspect-ratio: 0.48; /* Maintain phone aspect ratio */
@@ -2400,6 +2408,7 @@ section {
     transition: var(--transition);
     overflow: hidden;
     z-index: 10;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 992px) {
