@@ -758,3 +758,50 @@ document.querySelectorAll('.download-btn, .phone-download-btn').forEach(button =
 });
 
 
+// Phone UI Content Responsiveness
+function adjustPhoneUIContent() {
+    const device = document.querySelector('.device');
+    const appUI = document.querySelector('.app-ui');
+    
+    if (device && appUI) {
+        // Calculate base font size based on device width
+        const deviceWidth = device.offsetWidth;
+        const baseFontSize = Math.max(10, Math.min(14, deviceWidth / 20));
+        
+        // Apply calculated font size
+        appUI.style.fontSize = `${baseFontSize}px`;
+        
+        // Adjust profile image wrapper size
+        const profileWrapper = document.querySelector('.profile-image-wrapper');
+        if (profileWrapper) {
+            const wrapperSize = Math.max(100, Math.min(160, deviceWidth * 0.45));
+            profileWrapper.style.width = `${wrapperSize}px`;
+            profileWrapper.style.height = `${wrapperSize}px`;
+        }
+        
+        // Adjust download button padding
+        const downloadBtn = document.querySelector('.phone-download-btn');
+        if (downloadBtn) {
+            const btnPadding = Math.max(8, Math.min(12, deviceWidth * 0.04));
+            downloadBtn.style.padding = `${btnPadding}px ${btnPadding * 1.5}px`;
+        }
+    }
+}
+
+// Run on load, resize, and orientation change
+window.addEventListener('load', adjustPhoneUIContent);
+window.addEventListener('resize', adjustPhoneUIContent);
+window.addEventListener('orientationchange', adjustPhoneUIContent);
+
+// Also run when the device element is fully rendered
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial adjustment
+    adjustPhoneUIContent();
+    
+    // Set up a mutation observer to detect changes to the device element
+    const deviceElement = document.querySelector('.device');
+    if (deviceElement) {
+        const observer = new MutationObserver(adjustPhoneUIContent);
+        observer.observe(deviceElement, { attributes: true, childList: true, subtree: true });
+    }
+});
