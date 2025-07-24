@@ -743,44 +743,122 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    gap: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 12px 20px;
-    border-radius: 50px;
-    margin: 20px auto;
-    width: 80%;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    padding: 16px 24px;
+    border-radius: 16px;
+    margin: 24px auto;
+    width: 85%;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 
+        0 8px 20px rgba(102, 126, 234, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
-.phone-download-btn:before {
+.phone-download-btn::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
 }
 
-.phone-download-btn:hover:before {
+.phone-download-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.phone-download-btn:hover::before {
     left: 100%;
 }
 
+.phone-download-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
 .phone-download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+        0 12px 30px rgba(102, 126, 234, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.15);
     color: white;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.phone-download-btn:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 
+        0 6px 16px rgba(102, 126, 234, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .phone-download-btn i {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 2;
+    animation: downloadPulse 2s infinite;
+}
+
+.phone-download-btn span {
+    position: relative;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+@keyframes downloadPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
 }
 
 .settings-options {
@@ -1065,10 +1143,13 @@ section {
 
 /* Update the image-container styling */
 .image-container {
-    width: 100%;
-    aspect-ratio: 1/1;
+    width: 280px;
+    height: 350px;
     position: relative;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Update the blob-bg styling */
@@ -1086,12 +1167,10 @@ section {
 
 /* Add specific styling for the profile-image */
 .profile-image {
-    position: absolute;
+    position: relative;
     width: 280px;
     height: 350px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
     z-index: 1;
     border-radius: 20px;
     overflow: hidden;
@@ -2541,5 +2620,111 @@ section {
 /* Ensure color options are visible */
 .phone-color-options {
     justify-content: center;
+}
+
+/* ===== ENHANCED RESPONSIVE PROFILE IMAGE FIXES ===== */
+
+/* Large Devices (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .profile-image,
+    .image-container {
+        width: 300px;
+        height: 380px;
+    }
+}
+
+/* Tablet Portrait (768px to 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .profile-image,
+    .image-container {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .profile-image,
+    .image-container {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+    }
+    
+    .profile-image-wrapper {
+        width: 100px;
+        height: 130px;
+    }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media screen and (max-width: 575px) {
+    .profile-image,
+    .image-container {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+    }
+    
+    .profile-image-wrapper {
+        width: 80px;
+        height: 110px;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 375px) {
+    .profile-image,
+    .image-container {
+        width: 150px;
+        height: 190px;
+    }
+    
+    .profile-image-wrapper {
+        width: 70px;
+        height: 95px;
+    }
 }
 
