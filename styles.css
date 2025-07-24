@@ -57,6 +57,18 @@ body {
     padding: 0 2rem;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
 a {
     text-decoration: none;
     color: var(--primary-color);
@@ -296,6 +308,13 @@ section {
 .hero-content {
     flex: 1;
     padding-right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+    }
 }
 
 .hero h1 {
@@ -554,6 +573,23 @@ section {
     aspect-ratio: 0.48;
     /* Set max dimensions */
     max-width: 80vw;
+    max-height: 70vh;
+}
+
+@media screen and (max-width: 768px) {
+    .device {
+        width: 240px;
+        max-width: 70vw;
+        max-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .device {
+        width: 200px;
+        max-width: 60vw;
+        max-height: 50vh;
+    }
 }
 
 .dark-theme .device {
@@ -654,9 +690,9 @@ section {
 }
 
 .profile-image-wrapper {
-    width: 160px;
+    width: 120px;
     height: 160px;
-    border-radius: 50%;
+    border-radius: 20px;
     padding: 4px;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     position: relative;
@@ -676,7 +712,7 @@ section {
 .phone-profile-image {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 16px;
     object-fit: cover;
     border: 3px solid white;
     animation: counter-rotate 8s linear infinite;
@@ -1051,12 +1087,13 @@ section {
 /* Add specific styling for the profile-image */
 .profile-image {
     position: absolute;
-    width: 90%;
-    height: 90%;
-    /* top: 5%; */
-    /* left: 5%; */
+    width: 280px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
-    border-radius: 50%;
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -1064,8 +1101,8 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    border: 14px solid white;
+    border-radius: 20px;
+    border: 8px solid white;
 }
 
 .dark-theme .profile-image img {
