@@ -243,8 +243,9 @@ window.addEventListener('load', () => {
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 
-// Check for saved theme preference
-if (localStorage.getItem('theme') === 'dark') {
+// Check for saved theme preference or default to dark
+const savedThemePreference = localStorage.getItem('theme');
+if (savedThemePreference === 'dark' || (!savedThemePreference)) {
     body.classList.add('dark-theme');
     themeToggle.querySelector('.fa-sun').style.display = 'block';
     themeToggle.querySelector('.fa-moon').style.display = 'none';
@@ -313,7 +314,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 // Typing Animation
 const typedTextSpan = document.querySelector('.typed-text');
-const textArray = ['Flutter Developer', 'UI/UX Designer', 'Mobile App Developer'];
+const textArray = ['Mobile App Developer', 'Flutter Developer', 'React Native Developer', 'UI/UX Designer'];
 let textArrayIndex = 0;
 let charIndex = 0;
 

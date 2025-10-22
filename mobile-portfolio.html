@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nousher Murtaza - Mobile App Developer</title>
+    <link rel="stylesheet" href="mobile-portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Interactive mobile portfolio app showcasing Nousher Murtaza's cross-platform mobile app development skills with Flutter and React Native">
+</head>
+<body>
+    <!-- Mode Selection -->
+    <div class="mode-selector">
+        <button class="mode-btn active" data-mode="phone">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Phone</span>
+        </button>
+        <button class="mode-btn" data-mode="tablet">
+            <i class="fas fa-tablet-alt"></i>
+            <span>Tablet</span>
+        </button>
+        <button class="mode-btn" data-mode="desktop">
+            <i class="fas fa-desktop"></i>
+            <span>Desktop</span>
+        </button>
+    </div>
+
+    <!-- Device Container -->
+    <div class="device-container">
+        <!-- Mobile Device Frame -->
+        <div class="mobile-device" id="device-frame">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span class="time">9:41</span>
+            </div>
+            <div class="status-center">
+                <div class="notch"></div>
+            </div>
+            <div class="status-right">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-half"></i>
+            </div>
+        </div>
+
+        <!-- App Screens -->
+        <div class="app-container">
+            <!-- Home Screen -->
+            <div class="app-screen active" id="home-screen">
+                <div class="home-content">
+                    <!-- Hero Section -->
+                    <div class="hero-section">
+                        <div class="profile-hero">
+                            <div class="profile-image-large">
+                                <img src="assets/profile.jpg" alt="Nousher Murtaza">
+                                <div class="profile-glow"></div>
+                            </div>
+                            <div class="hero-text">
+                                <h1>Nousher Murtaza</h1>
+                                <p class="role">Mobile App Developer</p>
+                                <p class="tagline">Building beautiful mobile experiences</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Stats -->
+                    <div class="key-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">2+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">8+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">4+</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Actions -->
+                    <div class="main-actions">
+                        <button class="primary-action" onclick="navigateTo('projects')">
+                            <i class="fas fa-code"></i>
+                            <span>View My Work</span>
+                        </button>
+                        <button class="secondary-action" onclick="navigateTo('qualifications')">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>My Journey</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Qualifications Screen -->
+            <div class="app-screen" id="qualifications-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="navigateTo('home')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Qualifications</h2>
+                    <div class="spacer"></div>
+                </div>
+
+                <div class="qualifications-content">
+                    <!-- Education -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Bachelor of Computer Science</h4>
+                                <p class="institution">Air University Islamabad</p>
+                                <p class="period">2020 - 2024</p>
+                                <ul class="experience-bullets">
+                                    <li>Specialized in Mobile Application Development & Cross-platform Solutions</li>
+                                    <li>Key coursework: Data Structures, Algorithms, Flutter, React Native, Software Engineering</li>
+                                    <li>Graduation Project: Cross-platform mobile application with Flutter and Firebase</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Professional Experience</h3>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Mobile App Developer</h4>
+                                <p class="institution">DragSense, Islamabad</p>
+                                <p class="period">March 2025 - August 2025</p>
+                                <ul class="experience-bullets">
+                                    <li>Built cross-platform apps with Flutter & React Native for real-time location tracking</li>
+                                    <li>Integrated Google Maps SDK and Supabase for geolocation & data sync</li>
+                                    <li>Optimized performance: 40% faster load times through efficient state management</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Flutter Developer</h4>
+                                <p class="institution">Acceltor Ltd, Islington, UK</p>
+                                <p class="period">October 2024 - February 2025</p>
+                                <ul class="experience-bullets">
+                                    <li>Developed eCommerce platform with product catalog and secure checkout</li>
+                                    <li>Integrated Stripe payments and Firebase auth for international client</li>
+                                    <li>Built reusable component library reducing development time by 35%</li>
+                                    <li>Collaborated with design & backend teams for seamless API integration</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Flutter Development Intern</h4>
+                                <p class="institution">Bytewise Ltd, Islamabad</p>
+                                <p class="period">June 2024 - September 2024</p>
+                                <ul class="experience-bullets">
+                                    <li>Implemented Firebase authentication with email/password & OAuth</li>
+                                    <li>Integrated REST APIs with error handling and response caching</li>
+                                    <li>Learned Git workflows and collaborative development practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Screen -->
+            <div class="app-screen" id="skills-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="navigateTo('home')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Skills</h2>
+                    <div class="spacer"></div>
+                </div>
+
+                <div class="skills-content">
+                    <div class="skills-section">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Dart</span>
+                                    <span class="skill-level">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-level">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">C++</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Technologies & Frameworks</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Flutter</span>
+                                    <span class="skill-level">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React Native</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Firebase</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Provider/Riverpod</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">REST APIs</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Tools & Practices</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git/GitHub</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Agile Methodology</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Clean Architecture</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Screen -->
+            <div class="app-screen" id="projects-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="navigateTo('home')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Projects</h2>
+                    <div class="spacer"></div>
+                </div>
+
+                <div class="projects-content">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/oval.png" alt="Oval">
+                        </div>
+                        <div class="project-info">
+                            <h4>Oval</h4>
+                            <p>Enterprise Communication Platform for Japanese enterprise client with secure messaging and role-based access control.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/refreshKicks.jpg" alt="Refresh Kicks">
+                        </div>
+                        <div class="project-info">
+                            <h4>Refresh Kicks</h4>
+                            <p>On-Demand Shoe Care Service application with custom PHP backend and real-time order tracking.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/cricklyzer.jpg" alt="Cricklyzer">
+                        </div>
+                        <div class="project-info">
+                            <h4>Cricklyzer</h4>
+                            <p>Cricket analytics application with live scores integration and personalized data management.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>REST APIs</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/dairybook.jpg" alt="DairyBook">
+                        </div>
+                        <div class="project-info">
+                            <h4>DairyBook</h4>
+                            <p>Dairy management application for rural communities with offline storage capabilities.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>Hive</span>
+                                <span>Offline Storage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="no-image">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>ShopEase</h4>
+                            <p>Full-featured eCommerce platform with Stripe integration and Firebase authentication.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                                <span>Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="no-image">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h4>SocialCLI</h4>
+                            <p>Console-based social network demonstrating Dart OOP principles and modular architecture.</p>
+                            <div class="project-tags">
+                                <span>Dart</span>
+                                <span>CLI</span>
+                                <span>OOP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/newz.jpg" alt="NEWZ">
+                        </div>
+                        <div class="project-info">
+                            <h4>NEWZ</h4>
+                            <p>News application with NewsAPI integration and seamless in-app content display.</p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>NewsAPI</span>
+                                <span>WebView</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/flutterLearningHub.jpg" alt="Flutter Learning Hub">
+                        </div>
+                        <div class="project-info">
+                            <h4>Flutter Learning Hub</h4>
+                            <p>Web resource hub providing curated learning materials for Flutter development.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Screen -->
+            <div class="app-screen" id="certifications-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="navigateTo('home')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2>Certifications</h2>
+                    <div class="spacer"></div>
+                </div>
+
+                <div class="certifications-content">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg class="flutter-icon" viewBox="0 0 256 317">
+                                <path d="M157.666 0L0 157.667l48.8 48.8L255.268 0z" fill="#47C5FB"></path>
+                                <path d="M156.567 145.397L72.015 230.196l48.8 48.8l85.052-84.799l48.8-48.8z" fill="#47C5FB"></path>
+                                <path d="M121.133 279.669l37.082 37.082h97.142l-85.483-84.8z" fill="#00569E"></path>
+                                <path d="M71.6 230.996l48.8-48.8l85.483 84.8l-48.8 48.8z" fill="#00B5F8"></path>
+                                <path d="M121.133 279.669l78.3-39.15l-30.05-39.649z" fill="url(#a)" fill-opacity=".8"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Flutter and Dart - The Complete Guide [2024 Edition]</h4>
+                            <p class="cert-issuer">Udemy</p>
+                            <p class="cert-description">Comprehensive Flutter and Dart development course covering all aspects of mobile app development.</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Career Essentials in Generative AI by Microsoft and LinkedIn</h4>
+                            <p class="cert-issuer">Microsoft & LinkedIn</p>
+                            <p class="cert-description">Professional certification covering essential concepts and applications of generative AI technologies.</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-git"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Version Control with Git</h4>
+                            <p class="cert-issuer">Meta</p>
+                            <p class="cert-description">Comprehensive course on Git version control system and collaborative development workflows.</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Python Basics: Problem Solving with Code</h4>
+                            <p class="cert-issuer">Coursera</p>
+                            <p class="cert-description">Fundamental Python programming course focusing on problem-solving and algorithmic thinking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active" data-screen="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" data-screen="qualifications">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Qualifications</span>
+            </div>
+            <div class="nav-item" data-screen="skills">
+                <i class="fas fa-tools"></i>
+                <span>Skills</span>
+            </div>
+            <div class="nav-item" data-screen="projects">
+                <i class="fas fa-code"></i>
+                <span>Projects</span>
+            </div>
+            <div class="nav-item" data-screen="certifications">
+                <i class="fas fa-award"></i>
+                <span>Certs</span>
+            </div>
+        </div>
+
+        <!-- Home Indicator -->
+        <div class="home-indicator"></div>
+    </div>
+
+    <script src="mobile-portfolio.js"></script>
+</body>
+</html>
